@@ -1,0 +1,14 @@
+.slider-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  label {
+    width: 25%;
+  }
+
+  input {
+    width: 75%;
+  }
+}
