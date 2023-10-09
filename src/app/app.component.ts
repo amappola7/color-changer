@@ -6,44 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private _redValue: number = 255;
-  get redValue(): number {
-    return this._redValue;
-  }
-  set redValue(value: number) {
-    this._redValue = value;
-  }
+  backgroundColor: string = `RGB(255, 255, 255)`;
+  redValue: number = 255;
+  greenValue: number = 255;
+  blueValue: number = 255;
 
-  private _greenValue: number = 255;
-  get greenValue(): number {
-    return this._greenValue;
-  }
-  set greenValue(value: number) {
-    this._greenValue = value;
-  }
-
-  private _blueValue: number = 255;
-  get blueValue(): number {
-    return this._blueValue;
-  }
-  set blueValue(value: number) {
-    this._blueValue = value;
-  }
-
-  backgroundColor: string = `RGB(${this.redValue}, ${this.greenValue}, ${this.blueValue})`;
-
-  setRedValue(colorValue: number) {
-    this.redValue = colorValue;
+  setBackgroundColor(): void {
     this.backgroundColor = `RGB(${this.redValue}, ${this.greenValue}, ${this.blueValue})`;
   }
 
-  setGreenValue(colorValue: number) {
-    this.greenValue = colorValue;
-    this.backgroundColor = `RGB(${this.redValue}, ${this.greenValue}, ${this.blueValue})`;
-  }
+  setColorValue(colorValue: number, color: string): void {
+    switch(color) {
+      case 'red':
+        this.redValue = colorValue;
+        break;
+      case 'green':
+        this.greenValue = colorValue;
+        break;
+      case 'blue':
+        this.blueValue = colorValue;
+        break;
+    }
 
-  setBlueValue(colorValue: number) {
-    this.blueValue = colorValue;
-    this.backgroundColor = `RGB(${this.redValue}, ${this.greenValue}, ${this.blueValue})`;
+    this.setBackgroundColor();
   }
 }
