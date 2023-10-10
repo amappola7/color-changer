@@ -1,7 +1,18 @@
 <div class="app-container" [ngStyle]="{'background-color': backgroundColor}">
   <div class="sliders-container">
-    <app-slider class="slider" [color]="'Red'" (sliderValue)="setColorValue($event, 'red')"></app-slider>
-    <app-slider class="slider" [color]="'Green'" (sliderValue)="setColorValue($event, 'green')"></app-slider>
-    <app-slider class="slider" [color]="'Blue'" (sliderValue)="setColorValue($event, 'blue')"></app-slider>
+    <app-slider class="slider" [color]="'Red'" (sliderValue)="setColorValueWithSlider($event, 'red')"></app-slider>
+    <app-slider class="slider" [color]="'Green'" (sliderValue)="setColorValueWithSlider($event, 'green')"></app-slider>
+    <app-slider class="slider" [color]="'Blue'" (sliderValue)="setColorValueWithSlider($event, 'blue')"></app-slider>
+  </div>
+  <div class="buttons-container">
+    <app-button [colorValue]="[72, 202, 228]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[144, 224, 239]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[202, 240, 248]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[147, 129, 255]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[184, 184, 255]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[235, 232, 255]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[255, 143, 171]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[255, 179, 198]" (changeColor)="setColorValueWithButton($event)"></app-button>
+    <app-button [colorValue]="[255, 229, 236]" (changeColor)="setColorValueWithButton($event)"></app-button>
   </div>
 </div>

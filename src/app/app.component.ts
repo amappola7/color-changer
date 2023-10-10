@@ -11,11 +11,11 @@ export class AppComponent {
   greenValue: number = 255;
   blueValue: number = 255;
 
-  setBackgroundColor(): void {
-    this.backgroundColor = `RGB(${this.redValue}, ${this.greenValue}, ${this.blueValue})`;
+  setBackgroundColor(red: number, green: number, blue: number): void {
+    this.backgroundColor = `RGB(${red}, ${green}, ${blue})`;
   }
 
-  setColorValue(colorValue: number, color: string): void {
+  setColorValueWithSlider(colorValue: number, color: string): void {
     switch(color) {
       case 'red':
         this.redValue = colorValue;
@@ -28,6 +28,11 @@ export class AppComponent {
         break;
     }
 
-    this.setBackgroundColor();
+    this.setBackgroundColor(this.redValue, this.greenValue, this.blueValue);
   }
+
+  setColorValueWithButton(colorValue: number[]) {
+    this.setBackgroundColor(colorValue[0], colorValue[1], colorValue[2]);
+  }
+
 }
